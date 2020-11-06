@@ -5,6 +5,7 @@ function showTitle(el, title) {
     if (title === undefined) {
         popoverStyle.display = 'none'
     } else {
+        //返回一个矩形对象，包含四个属性：left、top、right和bottom。分别表示元素各边与页面上边和左边的距离
         const elRect = el.getBoundingClientRect()
         const elComputedStyle = window.getComputedStyle(el, null)
         const rightOffset = parseInt(elComputedStyle.getPropertyValue('padding-right')) || 0
@@ -61,6 +62,7 @@ export default {
             el.destroy = null
         }
     },
+
     unbind(el) {
         el.destroy()
     }
